@@ -52,6 +52,39 @@ account.withdraw(200)
 print(account.get_balance())  # Output: 1300
 
 
+#Polymorphism with Inheritance
+class Vehicle:
+    def start_engine(self):
+        return "Engine started"
+class Car(Vehicle):
+    def start_engine(self):
+        return "Car engine started with a roar!"
+class Motorcycle(Vehicle):
+    def start_engine(self):
+        return "Motorcycle engine started with a vroom!"
+def vehicle_start(vehicle):
+    print(vehicle.start_engine())
+car = Car()
+motorcycle = Motorcycle()   
+vehicle_start(car)          # Output: Car engine started with a roar!
+vehicle_start(motorcycle)   # Output: Motorcycle engine started with a vroom!
+#Encapsulation with Getters and Setters
+class Person:
+    def __init__(self, name, age):
+        self.__name = name  # Private attribute
+        self.__age = age    # Private attribute
 
+    def get_name(self):
+        return self.__name
 
+    def set_name(self, name):
+        self.__name = name
 
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, age):
+        if age >= 0:
+            self.__age = age
+person = Person("shresth", 30)
+print(person.get_name())  # Output: shresth
