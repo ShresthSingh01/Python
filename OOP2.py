@@ -88,3 +88,22 @@ class Person:
             self.__age = age
 person = Person("shresth", 30)
 print(person.get_name())  # Output: shresth
+person.set_age(31)
+print(person.get_age())   # Output: 31
+#Inheritance with Multiple Levels
+class Grandparent:
+    def heritage(self):
+        return "Grandparent's heritage"
+class Parent(Grandparent):
+    def heritage(self):
+        return "Parent's heritage"
+class Child(Parent):
+    def heritage(self):
+        return "Child's heritage"
+child = Child()
+print(child.heritage())  # Output: Child's heritage
+
+#Polymorphism with Built-in Functions
+print(len("Hello"))      # Output: 5    
+print(len([1, 2, 3, 4])) # Output: 4
+print(len({1: 'a', 2: 'b'})) # Output: 2
